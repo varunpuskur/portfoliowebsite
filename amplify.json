@@ -1,25 +1,24 @@
 {
-    "rewrites": [
-      {
-        "source": "/work/quickcart",
-        "target": "/quickcart.html"
-      },
-      {
-        "source": "/work",
-        "target": "/work.html"
-      },
-      {
-        "source": "/about",
-        "target": "/about.html"
-      },
-      {
-        "source": "/portfolio",
-        "target": "/portfolio.html"
-      },
-      {
-        "source": "/contact",
-        "target": "/contact.html"
-      }
-    ]
-  }
-  
+  "rewrites": [
+    {
+      "source": "/quickcart",
+      "target": "/quickcart.html"
+    },
+    {
+      "source": "/work",
+      "target": "/work.html"
+    },
+    {
+      "source": "/about",
+      "target": "/about.html"
+    },
+    {
+      "source": "/portfolio",
+      "target": "/portfolio.html"
+    },
+    {
+      "source": "/contact",
+      "target": "/contact.html"
+    }
+  ]
+}
