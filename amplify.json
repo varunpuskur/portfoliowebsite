@@ -1,6 +1,10 @@
 {
     "rewrites": [
       {
+        "source": "/work/quickcart",
+        "target": "/quickcart.html"
+      },
+      {
         "source": "/work",
         "target": "/work.html"
       },
