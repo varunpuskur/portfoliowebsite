@@ -69,9 +69,9 @@ nav {
 
 nav {
     display: flex;
-    justify-content: flex-end; /* Align the nav to the right */
-    margin-right: -1%; /* Adjust this value as needed */
-    margin-top: 5%; /* Adjust this value as needed */
+    justify-content: flex-end; 
+    margin-right: -1%; 
+    margin-top: 5%;
 }
 
 nav ul {
@@ -80,11 +80,11 @@ nav ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Keep the text items aligned to the left */
+    align-items: flex-start; 
 }
 
 nav ul li {
-    margin-bottom: -5px; /* Adjust this to control the gap between headers */
+    margin-bottom: -5px; 
     font-size: 70px;
 }
 
@@ -97,12 +97,12 @@ nav ul li a {
     font-family: "Archivo Black", sans-serif;
     font-weight: 400;
     font-style: normal;
-    text-align: left; /* Ensure the text inside the link is aligned left */
-    display: block; /* Make the anchor tag a block-level element */
+    text-align: left; 
+    display: block; 
 }
 
 nav ul li a:hover {
-    transform: translateX(10px); /* Move 5px to the right */
+    transform: translateX(10px); 
     font-style: italic;
     transition: transform .5s;
 }
@@ -134,7 +134,7 @@ nav ul li a:hover {
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0; /* Place the background behind the content */
+    z-index: 0; 
 }
 
 .logo-about {
@@ -156,7 +156,7 @@ nav ul li a:hover {
 .about-me {
     text-align: right;
     transform: translateY(0px) translateX(75px);
-    margin-left: 50%; /* adjust the margin-left property */
+    margin-left: 50%; 
     margin-top: -60%;
 }
   
@@ -224,12 +224,12 @@ nav ul li a:hover {
     background-color: #fff;
     color: rgb(66, 66, 66);
     padding: 50px 0;
-    margin-top: 200px; /* Added top margin */
+    margin-top: 200px; 
 }
 .container-port {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 10px 7.5px; /* Set gap between images to 10px and gap on the sides to 7.5px */
+    gap: 10px 7.5px; 
     padding: 10 15%;
 }
 
@@ -247,8 +247,8 @@ nav ul li a:hover {
 
 .photo {
     position: relative;
-    width: 100%; /* Ensure the photo takes up the full width */
-    max-width: 300px; /* Adjust this value based on your image sizes */
+    width: 100%; 
+    max-width: 300px; 
 }
 
 .photo img {
@@ -319,7 +319,7 @@ nav ul li a:hover {
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0; /* Place the background behind the content */
+    z-index: 0; 
 }
 
 .intro-work {
@@ -359,7 +359,7 @@ nav ul li a:hover {
 }
 
 .work-nav ul li {
-    margin-bottom: 5px; /* Adjust this to control the gap between headers */
+    margin-bottom: 5px; 
     font-size: calc(12px + 5vw);
 }
 
@@ -401,7 +401,7 @@ nav ul li a:hover {
 
 
 #quickcart {
-    position: relative; /* Ensure relative positioning for grain overlay */
+    position: relative; 
     overflow: hidden;
     padding: 20px;
     display: flex;
@@ -421,7 +421,7 @@ nav ul li a:hover {
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1; /* Place the background behind the content */
+    z-index: -1; 
 }
 
 /* Grain Effect */
@@ -432,7 +432,7 @@ nav ul li a:hover {
     height: 100%;
     width: 100%;
     pointer-events: none;
-    z-index: 0; /* Ensure the grain is layered over the background but under the content */
+    z-index: 0; 
     transform: translateZ(0);
 }
 
@@ -444,7 +444,8 @@ nav ul li a:hover {
     height: calc(100% + 20rem);
     z-index: 0;
     position: fixed;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png"); /* Path to your grain texture */    opacity: 0.15;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png"); 
+    opacity: 0.15;
     pointer-events: none;
     animation: noise 1s steps(2) infinite;
 }
@@ -539,7 +540,7 @@ nav ul li a:hover {
     margin-top: 0;
     margin-left: 20px;
     max-width: 60%;
-    color: #fff; /* Assuming you want the text to be white */
+    color: #fff; 
     font-optical-sizing: auto;
     font-size: 15px;
 }
@@ -548,7 +549,7 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center; /* Center vertically */
+    align-items: center;
 }
 
 .qc-img1 {
@@ -565,33 +566,33 @@ nav ul li a:hover {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;  
-    max-width: 450px; /* Adjust the value based on your design requirements */
-    text-align: left; /* Center horizontally */
+    max-width: 450px;
+    text-align: left;
 }
 
 .qc-images-container {
     display: flex;
-    justify-content: center; /* Align items horizontally */
-    align-items: center; /* Align items vertically */
-    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap; 
 }
 
 .qc-lofi,
 .qc-hifi {
-    width: 20%; /* Adjust width as needed */
+    width: 20%; 
     height: auto;
     border-radius: 10px;
-    margin: 40px; /* Add margin for spacing */
+    margin: 40px;
 }
 
 .p3-qc {
-    width: 30%; /* Adjust width as needed */
+    width: 30%;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-size: 14px;
     text-align: center;
-    margin: 20px; /* Add margin for spacing */
+    margin: 20px; 
 }
 
 
@@ -689,22 +690,22 @@ nav ul li a:hover {
 
 .video-and-text-container video {
     width: 25%;
-    border-radius: 50px; /* Adjusted border radius */
+    border-radius: 50px; 
     margin-left: 10%;
     margin-bottom: 50px;
 }
 
 .vid-qbt-qc {
-    width: calc(40% - 20px); /* Adjusted width */
+    width: calc(40% - 20px);
     font-size: 14px;
-    margin-bottom: 20px; /* Reduced margin */
+    margin-bottom: 20px; 
 }
 
 .vid-qbt-qc h1 {
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
     color: #dd9871;
-    margin-bottom: 10px; /* Reduced margin */
+    margin-bottom: 10px; 
     margin-left: -60%;
     margin-top: 40%;
 }
@@ -729,9 +730,9 @@ nav ul li a:hover {
 
 #container-cont {
     position: relative;
-    z-index: 1; /* Ensure the content is above the background */
-    padding: 20px; /* Adjust padding as needed */
-    color: white; /* Ensure text is readable on dark background */
+    z-index: 1; 
+    padding: 20px; 
+    color: white; 
 }
 
 
@@ -747,7 +748,7 @@ nav ul li a:hover {
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0; /* Place the background behind the content */
+    z-index: 0; 
 }
 
 .logo-qc {
@@ -768,7 +769,7 @@ nav ul li a:hover {
     width: 75%;
     height: 2px;
     background-color: #fff;
-    margin: 20px auto; /* Centering the line */
+    margin: 20px auto; 
     margin-top: 15px;
     margin-left: 15%;
     border-radius: 10px;
@@ -794,7 +795,7 @@ nav ul li a:hover {
 
 .h2-cont, .h3-cont {
     margin: 0;
-    white-space: nowrap; /* Prevent text wrap */
+    white-space: nowrap; 
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;  
@@ -814,11 +815,11 @@ nav ul li a:hover {
 
 .p-cont::before {
     content: '';
-    display: inline-block; /* Keep it within the document flow */
-    margin-right: 10px; /* Space between the arrow and text */
+    display: inline-block;
+    margin-right: 10px; 
     margin-left: -5px;
-    width: 15px; /* Adjust the width as needed */
-    height: 15px; /* Adjust the height as needed */
+    width: 15px; 
+    height: 15px; 
     background: url('images/arrow.png') no-repeat center center;
     background-size: contain;
     transform: rotate(135deg) translateY(-4px);
@@ -861,26 +862,26 @@ a {
     }
 
     .logo {
-        width: 50px; /* Reduce the logo size */
-        transform: none; /* Remove translations to center it */
-        margin: 20px 0; /* Add margin for spacing */
+        width: 50px; 
+        transform: none; 
+        margin: 20px 0;
     }
 
     .intro {
         margin-top: 20px;
-        transform: none; /* Remove translations for better layout */
-        text-align: left; /* Center-align text */
+        transform: none; 
+        text-align: left; 
     }
 
     .intro h1 {
-        font-size: 20px; /* Adjust font size */
-        margin-top: 20px; /* Add margin to move it down */
+        font-size: 20px;
+        margin-top: 20px;
         margin-left: 10%;
     }
 
     .intro p {
-        font-size: 12px; /* Adjust font size */
-        margin-top: 10px; /* Add margin to move it down */
+        font-size: 12px;
+        margin-top: 10px; 
         align-items: left;
         margin-bottom: 5px;
         max-width: 90%;
@@ -888,9 +889,9 @@ a {
     }
 
     .linkedin-logo, .gmail-logo {
-        width: 15px; /* Adjust the size */
+        width: 15px;
         height: 15px;
-        transform: none; /* Remove translations */
+        transform: none; 
         margin-left: 10%;
     }
 
@@ -905,14 +906,14 @@ a {
         display: flex;
         flex-direction: column;
         align-items: left;
-        margin-top: 45px; /* Add margin to move it down */
+        margin-top: 45px; 
         margin-bottom: 45px;
         
     }
 
     nav ul li {
-        font-size: 45px; /* Adjust font size for menu items */
-        margin-bottom: 10px; /* Add spacing between items */
+        font-size: 45px; 
+        margin-bottom: 10px; 
     }
 
     nav ul li a {
@@ -920,7 +921,7 @@ a {
         color: #fff;
         padding: 5px 10px;
         border-radius: 5px;
-        transform: none; /* Remove translations */
+        transform: none; 
         font-family: "Archivo Black", sans-serif;
         font-weight: 400;
         font-style: normal;
@@ -928,7 +929,7 @@ a {
     }
 
     nav ul li a:hover {
-        transform: translateX(10px); /* Remove translations */
+        transform: translateX(10px); 
         font-style: italic;
         transition: transform .5s;
     }
@@ -944,10 +945,10 @@ a {
 
     .copyright {
         font-size: 12px;
-        transform: none; /* Remove translations */
-        text-align: center; /* Center align the text */
+        transform: none; 
+        text-align: center; 
         color: #666;
-        margin-top: 20px; /* Add margin to move it down */
+        margin-top: 20px; 
     }
 
     /* ABOUT */
@@ -1106,7 +1107,7 @@ a {
     }
 
     .work-nav ul li a:hover {
-        transform: translateY(0px) translateX(5px); /* Move 1px to the right */
+        transform: translateY(0px) translateX(5px); 
         font-style: italic;
         transition: transform .5s;
     }
@@ -1123,7 +1124,7 @@ a {
 
     .logo-qc {
         display: block;
-        width: 60px; /* Adjust the size as needed */
+        width: 60px; 
         height: auto;
         margin-left: -10%;
         margin-right: auto;
@@ -1242,7 +1243,7 @@ a {
 
     .qc-lofi, .qc-hifi {
         width: 45%;
-        display: block; /* Stacks elements vertically */
+        display: block; 
         margin-left: auto;
         margin-right: auto;
     }
@@ -1250,36 +1251,36 @@ a {
     .p3-qc {
         font-size: 10px;
         text-align: center;
-        width: 100%; /* Full width on mobile */
+        width: 100%; 
     }
 
     .video-and-text-container {
         display: block;
-        margin-top: 20px; /* Adjusted margin */
+        margin-top: 20px; 
     }
 
     .video-and-text-container video {
         width: 45%;
-        border-radius: 30px; /* Adjusted border radius */
+        border-radius: 30px; 
         margin-left: 28%;
         margin-right: auto;
-        margin-bottom: 30px; /* Adjusted margin */
+        margin-bottom: 30px; 
     }
 
     .vid-qbt-qc {
-        width: 100%; /* Adjusted width */
+        width: 100%; 
         font-size: 14px;
-        margin-bottom: 20px; /* Reduced margin */
+        margin-bottom: 20px; 
     }
 
     .vid-qbt-qc h1 {
         font-family: "Montserrat", sans-serif;
         font-size: 20px;
         color: #dd9871;
-        margin-bottom: 10px; /* Reduced margin */
+        margin-bottom: 10px; 
         margin-left: auto;
         margin-right: auto;
-        margin-top: 20px; /* Adjusted margin */
+        margin-top: 20px; 
         text-align: center;
     }
 
@@ -1296,7 +1297,7 @@ a {
 
     #container-cont {
     margin-right: 1%;        
-    color: white; /* Ensure text is readable on dark background */
+    color: white; 
     }
 
     #contact h1 {
@@ -1554,8 +1555,8 @@ a {
 
 .photo {
     position: relative;
-    width: 100%; /* Ensure the photo takes up the full width */
-    max-width: 300px; /* Adjust this value based on your image sizes */
+    width: 100%; 
+    max-width: 300px; 
 }
 
 .photo img {
@@ -1582,7 +1583,7 @@ a {
     opacity: 0;
     transition: opacity 0.3s ease;
     text-align: center;
-    overflow: hidden; /* Hide overflowing text */
+    overflow: hidden; 
 }
 
 /* Show the text on hover */
