@@ -1,0 +1,21 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 22
+        - nvm use 22
+        - npm install --global pnpm@11.25.0
+        - pnpm install --frozen-lockfile
+    build:
+      commands:
+        - STATIC_EXPORT=true pnpm run build
+        - test -f out/index.html
+  artifacts:
+    baseDirectory: out
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
