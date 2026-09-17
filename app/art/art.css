@@ -1,0 +1,84 @@
+.drawing-page { --art-accent: #285f82; --art-line: #d2dfe7; --art-muted: #62717c }
+.drawing-page .page-hero { padding-bottom: 24px }
+.drawing-page h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: clamp(64px,8vw,104px); letter-spacing: -.055em }
+.drawing-page .gallery-intro p { max-width: 345px; font-size: 17px; line-height: 1.7 }
+.drawing-gallery { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); align-items: start; column-gap: 42px; row-gap: 65px; padding-block: 30px 90px }
+.drawing-piece { grid-column: span 4; min-width: 0; scroll-margin-top: 35px }
+.drawing-piece:first-child { grid-column: span 5 }
+.drawing-piece:nth-child(2) { grid-column: 7 / -1; align-self: center }
+.drawing-open { display: block; width: 100%; padding: 0; background: none; border: 0; color: inherit; text-align: left; border-radius: 1px }
+.drawing-open:focus-visible { outline-color: var(--art-accent); outline-offset: 8px }
+.drawing-mat { position: relative; padding: clamp(12px,1.8vw,24px); background: #fff; border: 1px solid #e1e5e8; box-shadow: 0 5px 8px -6px #20344230; transition: box-shadow 250ms ease, transform 250ms ease }
+.drawing-mat img { width: 100%; height: auto }
+.drawing-enlarge { position: absolute; right: 10px; bottom: 10px; display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #fff; color: #203f55; border: 1px solid var(--art-line); font-size: 13px; opacity: 0; transform: translateY(4px); transition: opacity 180ms ease, transform 180ms ease }
+.drawing-open:hover .drawing-mat, .drawing-open:focus-visible .drawing-mat { transform: translateY(-3px); box-shadow: 0 15px 25px -20px #20344275 }
+.drawing-open:hover .drawing-enlarge, .drawing-open:focus-visible .drawing-enlarge { opacity: 1; transform: none }
+.drawing-caption { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 3px 16px; padding-top: 15px }
+.drawing-caption strong { font-size: 17px; font-weight: 500; letter-spacing: -.025em }
+.drawing-caption > span { font-size: 14px; color: var(--art-muted); line-height: 1.5 }
+.drawing-featured .drawing-caption strong { font-size: 21px }
+.drawing-viewer { --viewer-accent: #285f82; max-width: min(1080px,calc(100vw - 48px))!important; max-height: calc(100dvh - 32px); overflow-y: auto; gap: 0!important; padding: 0!important; border: 1px solid #d2dfe7!important; border-radius: 4px!important; background: #f7f8fa; box-shadow: 0 25px 100px #101d2940 }
+.drawing-viewer-header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 17px 26px; background: #fff; border-bottom: 1px solid #e0e6eb }
+.drawing-viewer-header h2 { font: 500 21px/1.3 Arial,Helvetica,sans-serif; letter-spacing: -.025em }
+.drawing-viewer-header p { font-size: 14px; line-height: 1.5; margin-top: 3px; color: #62717c }
+.drawing-close { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; flex-shrink: 0; color: #203f55; border: 1px solid #d2dfe7; background: transparent; border-radius: 50% }
+.drawing-close:hover { background: #e7eef4 }
+.drawing-viewer-stage { display: flex; justify-content: center; align-items: center; min-height: 0; padding: 20px 28px 0; animation: artwork-appear 180ms ease-out }
+.drawing-viewer .art-lens { width: fit-content; max-width: 100%; min-width: 0; margin-inline: auto }
+.drawing-viewer .lens-surface { width: fit-content; max-width: 100%; margin-inline: auto; background: white; box-shadow: 0 2px 8px #20344212 }
+.drawing-viewer .lens-surface img { width: auto; max-width: 100%; height: auto; max-height: min(57dvh,650px); object-fit: contain }
+.drawing-viewer .lens-toolbar { min-height: 43px; gap: 18px }
+.drawing-viewer .lens-toggle { font-size: 14px; min-height: 44px; color: var(--viewer-accent); padding-inline: 2px }
+.drawing-viewer .lens-toolbar > span { display: none }
+.drawing-viewer .lens-toggle:hover { color: #203442 }
+.drawing-viewer :focus-visible { outline-color: var(--viewer-accent); outline-offset: 3px }
+.drawing-viewer-navigation { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 0 26px 10px }
+.drawing-viewer-navigation button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 44px; padding: 8px 0; border: 0; background: none; font-size: 14px; color: #203442 }
+.drawing-viewer-navigation button:hover { color: var(--viewer-accent) }
+.drawing-viewer-navigation p { font: 14px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace; color: #203442; font-variant-numeric: tabular-nums }
+.drawing-count-divider { color: #85919b; padding-inline: 6px }
+.drawing-thumbnails { display: flex; position: relative; gap: 10px; overflow-x: auto; padding: 14px 26px 17px; border-top: 1px solid #e0e6eb; background: #edf2f6; scrollbar-width: thin; scrollbar-color: #bdcdd9 transparent; overscroll-behavior-x: contain }
+.drawing-thumbnail { width: 56px; height: 66px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 4px; border: 1px solid transparent; border-radius: 1px; background: #fff; opacity: .58; transition: opacity 180ms ease, border-color 180ms ease }
+.drawing-thumbnail img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain }
+.drawing-thumbnail:hover { opacity: 1 }
+.drawing-thumbnail[aria-pressed="true"] { opacity: 1; border-color: var(--viewer-accent); box-shadow: 0 0 0 1px var(--viewer-accent) }
+@keyframes artwork-appear { from { opacity: .45; transform: translateY(3px) } to { opacity: 1; transform: none } }
+@media (max-width:1000px) {
+  .drawing-gallery { column-gap: 27px; row-gap: 45px }
+  .drawing-caption { display: block }
+  .drawing-caption > span { display: block; margin-top: 3px }
+}
+@media (max-width:760px) {
+  .drawing-page .page-hero { padding-bottom: 10px }
+  .drawing-page h1 { font-size: clamp(56px,13vw,80px) }
+  .drawing-page .gallery-intro { gap: 16px }
+  .drawing-page .gallery-intro p { font-size: 16px }
+  .drawing-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 18px; row-gap: 32px; padding-block: 20px 55px }
+  .drawing-piece { grid-column: span 1 }
+  .drawing-piece:first-child, .drawing-piece:nth-child(2) { grid-column: 1 / -1 }
+  .drawing-piece:first-child { width: 87% }
+  .drawing-piece:nth-child(2) { width: 93%; justify-self: end }
+  .drawing-mat { padding: 9px }
+  .drawing-featured .drawing-mat { padding: 14px }
+  .drawing-caption { padding-top: 10px }
+  .drawing-caption strong { font-size: 16px }
+  .drawing-featured .drawing-caption strong { font-size: 19px }
+  .drawing-caption > span { font-size: 14px }
+  .drawing-enlarge { opacity: 1; transform: none; padding: 7px; right: 8px; bottom: 8px }
+  .drawing-enlarge > span { display: none }
+  .drawing-viewer { max-width: calc(100vw - 16px)!important; max-height: calc(100dvh - 16px) }
+  .drawing-viewer-header { padding: 12px 16px; gap: 12px }
+  .drawing-viewer-header h2 { font-size: 19px }
+  .drawing-viewer-stage { padding: 16px 16px 0 }
+  .drawing-viewer .lens-surface img { max-height: 52dvh }
+  .drawing-viewer-navigation { padding-inline: 16px; gap: 10px }
+  .drawing-viewer-navigation button { gap: 7px }
+  .drawing-thumbnails { padding: 12px 16px 14px; gap: 10px }
+  .drawing-thumbnail { width: 49px; height: 58px }
+}
+@media (max-width:360px) { .drawing-gallery { column-gap: 13px }.drawing-caption strong { font-size: 15px }.drawing-caption > span { font-size: 13px } }
+@media (prefers-reduced-motion:reduce) {
+  .drawing-viewer-stage { animation: none }
+  .drawing-mat, .drawing-enlarge, .drawing-thumbnail { transition: none }
+  .drawing-open:hover .drawing-mat, .drawing-open:focus-visible .drawing-mat { transform: none }
+}

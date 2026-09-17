@@ -1,0 +1,311 @@
+/* Lead with engineering work; keep the sketchbook as a discovery. */
+.hero { padding-block: 44px 48px; gap: 80px; grid-template-columns: 1.4fr 1fr }
+.hero h1 { font-size: clamp(72px,7.4vw,100px); line-height: .94; margin-top: 20px }
+.hero h1 em { font-size: 1.03em; line-height: 1.1 }
+.hero h1 em::after { display: none }
+.hero-description { margin-top: 23px; max-width: 430px; font-size: 18px; line-height: 1.65 }
+.hero-actions { margin-top: 23px; flex-wrap: wrap; row-gap: 14px }
+.hero-note { margin-top: 27px }
+.hero-art.interactive-art { max-width: 315px; margin-right: 20px }
+.identity-strip { padding-block: 17px; font-size: 13px }
+.section { padding-block: 70px }
+.selected-projects { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 38px }
+.selected-projects > article { min-width: 0 }
+.selected-project-copy { padding: 23px 2px 0 }
+.selected-project-copy .eyebrow { font-size: 12px; color: var(--gray); letter-spacing: .08em }
+.selected-project-copy h3 { display: flex; align-items: center; justify-content: space-between; font-size: 32px; margin-top: 12px; margin-bottom: 15px }
+.selected-project-copy h3 svg { color: var(--orange); transition: transform 180ms ease }
+.selected-project-copy a:hover h3 svg { transform: translate(3px,-3px) }
+.selected-project-copy > p:not(.eyebrow) { font-size: 16px; line-height: 1.7; color: var(--gray); max-width: 500px }
+.project-links { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-top: 23px }
+.project-links .text-link { color: var(--orange); border-color: #bd3d1b55 }
+.project-links .muted-link { color: var(--gray); border-color: #a9aeb3 }
+.project-visual-link { display: block; height: 350px; transition: transform 220ms ease }
+.project-visual-link:hover { transform: translateY(-3px) }
+.project-flow { height: 100%; display: flex; flex-direction: column; padding: 27px; background: #edf1f2; border: 1px solid #dce2e4; overflow: hidden }
+.flow-heading, .flow-caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: 12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; color: #65737b; letter-spacing: .05em }
+.flow-heading > span:first-child { color: var(--ink); font-weight: 600 }
+.flow-steps { list-style: none; padding: 0; margin: 30px 0 22px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 13px; position: relative }
+.flow-steps::before { content: ''; height: 1px; background: #b7c2c8; position: absolute; left: 10px; right: 10px; top: 30px }
+.flow-steps li { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 14px 12px 16px; background: #fdfefe; border: 1px solid #d5dfe3 }
+.flow-steps li > svg { width: 23px; height: 23px; color: #516d7a; margin-bottom: 22px }
+.flow-steps li > span { position: absolute; right: 10px; top: 17px; font: 11px/1 ui-monospace,monospace; color: #6d7d85 }
+.flow-steps strong { font-size: 16px; font-weight: 500; letter-spacing: -.03em }
+.flow-steps p { font-size: 12px; margin-top: 5px; line-height: 1.5; color: #69767d }
+.flow-database { display: flex; align-items: center; gap: 9px; font-size: 12px; line-height: 1.5; color: #68767e; padding: 11px 0; border-top: 1px solid #d2dce0 }
+.flow-database > span:first-of-type { color: var(--ink); font-weight: 600 }
+.flow-database > span:last-child { margin-left: auto; text-align: right }
+.flow-caption { margin-top: auto; padding-top: 10px; font-size: 11px }
+.flow-caption svg { color: #526f7d }
+.quickcart-visual { position: relative; display: flex; align-items: flex-start; justify-content: center; gap: 23px; padding: 37px 25px 0; height: 350px; background: #f1eee8; border: 1px solid #e4dfd7; overflow: hidden }
+.prototype-screen { position: relative; display: block; aspect-ratio: 630/1276; width: 100%; overflow: hidden; border-radius: 16% / 8%; background: transparent; border: 0; box-shadow: none }
+.prototype-screen img { position: absolute; width: 111.9048%; max-width: none; height: auto; max-height: none; left: -7.1429%; top: -1.7241%; margin: 0 }
+.quickcart-visual .prototype-screen { width: 170px; flex: 0 0 40%; max-width: 180px; transition: transform 300ms ease }
+.quickcart-visual .screen-first { transform: translateY(25px) rotate(-4deg) }
+.quickcart-visual .screen-second { transform: rotate(4deg) }
+.quickcart-visual:hover .screen-first { transform: translateY(14px) rotate(-2deg) }
+.quickcart-visual:hover .screen-second { transform: translateY(-5px) rotate(2deg) }
+.prototype-visual-label { position: absolute; inset: auto 0 0; padding: 13px 18px; text-align: center; background: #f1eee8f5; font-size: 11px; letter-spacing: .08em; color: #6f6c65 }
+.experience-section { grid-template-columns: 1fr 1.35fr; gap: 80px }
+.experience-item { padding-bottom: 30px }
+.experience-item h3 { font-size: 29px; margin-top: 8px }
+.experience-item > p.experience-detail { font-size: 14px; margin-top: 11px; color: #6c747a }
+.experience-item + .experience-item { padding-top: 30px; padding-bottom: 30px }
+.experience-item.experience-secondary { padding-bottom: 0 }
+.experience-secondary h3 { font-size: 21px }
+.experience-secondary > p:not(.eyebrow) { font-size: 14px; line-height: 1.7 }
+.experience-secondary > .eyebrow { font-size: 11px }
+.sketch-section { padding-block: 76px 90px; gap: 65px }
+.sketch-intro h2 { font-size: clamp(38px,3.5vw,48px) }
+.sketch-intro > p:not(.eyebrow) { max-width: 320px }
+.sketch-intro .text-link { margin-top: 24px }
+.sketch-aside { font-size: 16px; margin-top: 28px }
+.sketch-instructions { font-size: 12px }
+.sketch-sheet-label { font-size: 11px }
+.sketch-empty p { font-size: 12px }
+.sketch-bottom button, .sketch-modes button { font-size: 13px }
+.art-preview > div, .gallery-frame { background: white; border: 1px solid #e0e3e5 }
+.case-comparison figure { background: transparent; padding: 0 }
+.case-comparison .prototype-screen { max-width: 220px; margin-inline: auto }.case-comparison .prototype-screen img { width: 111.9048%; max-height: none; max-width: none; margin: 0 }
+.case-comparison figcaption { font-size: 14px; text-align: left }
+.case-actions { margin-top: 25px }
+.case-flow { max-width: 880px; margin: 0 auto 35px }
+.case-flow .project-flow { min-height: 350px; padding: 30px 40px }
+.case-flow .flow-steps li { padding: 20px; min-height: 145px }
+.case-flow .flow-steps strong { font-size: 21px }
+.case-flow .flow-steps p, .case-flow .flow-database { font-size: 14px }
+.project-scope { border-bottom: 1px solid var(--line) }
+.contact-actions { flex-wrap: wrap }
+.resume-sheet { max-width: 960px }
+.resume-actions { display: flex; flex-direction: column; align-items: stretch; gap: 10px; flex-shrink: 0 }
+.resume-actions .button { font-size: 13px; padding: 10px 14px }
+.resume-title .resume-contact { display: flex; gap: 7px 14px; flex-wrap: wrap }
+.resume-section li + li { margin-top: 4px }
+.resume-section p, .resume-section li { font-size: 15px }
+.resume-section h3 { margin-bottom: 6px }
+.resume-entry-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 18px }
+.resume-entry-heading > span { font-size: 13px; color: var(--gray); white-space: nowrap }
+.resume-subline a { color: var(--orange) }
+@media(max-width:1100px) {
+  .hero { gap: 35px }.hero-art.interactive-art { margin-right: 5px }
+  .selected-projects { gap: 25px }.project-flow { padding: 20px }.flow-heading { font-size: 10px }
+  .flow-steps { gap: 8px }.flow-steps li { padding-inline: 8px }.flow-steps strong { font-size: 15px }.flow-steps p { font-size: 11px }
+  .flow-database { gap: 6px; font-size: 11px }.flow-database > svg { flex-shrink: 0 }
+  .experience-section { gap: 45px }.sketch-section { gap: 35px }
+}
+@media(max-width:760px) {
+  .hero { grid-template-columns: 1fr; padding-block: 35px 40px; gap: 34px }
+  .hero h1 { font-size: 76px; line-height: .94 }.hero-description { font-size: 17px; max-width: 410px }
+  .hero-art.interactive-art { max-width: 300px; margin-right: 0; width: calc(100% - 32px) }
+  .hero-note { margin-top: 22px }.identity-strip { font-size: 12px }
+  .selected-projects { grid-template-columns: minmax(0,1fr); gap: 42px }
+  .project-visual-link, .quickcart-visual { height: 310px }
+  .project-flow { padding: 22px 17px }.flow-heading { font-size: 11px }.flow-steps { margin: 25px 0 18px; gap: 9px }
+  .flow-steps li { padding: 13px 8px 15px }.flow-steps strong { font-size: 14px }.flow-steps li > span { font-size: 10px; right: 8px }
+  .flow-steps li > svg { width: 20px; height: 20px }.flow-steps p { font-size: 11px }
+  .flow-database > span:last-child { max-width: 150px }.flow-caption { font-size: 10px }
+  .selected-project-copy { padding-top: 21px }.selected-project-copy h3 { font-size: 30px }
+  .selected-project-copy .eyebrow { font-size: 11px }.project-links { gap: 22px; margin-top: 19px }
+  .quickcart-visual { padding-top: 28px; gap: 22px }.quickcart-visual .prototype-screen { flex-basis: 41% }
+  .section { padding-block: 48px }.experience-section { grid-template-columns: 1fr; gap: 32px }
+  .experience-item h3 { font-size: 27px }.experience-secondary h3 { font-size: 22px }
+  .sketch-section { grid-template-columns: 1fr; padding-block: 55px 92px; gap: 29px }
+  .sketch-intro > p:not(.eyebrow) { max-width: none }.sketch-aside { font-size: 15px; margin-top: 19px }
+  .sketch-instructions { font-size: 11px }.sketch-modes button, .sketch-bottom button { font-size: 12px }
+  .sketch-empty p { font-size: 11px }.case-flow .project-flow { padding: 20px 16px; min-height: 290px }
+  .case-flow .flow-steps li { padding: 12px 8px; min-height: 130px }.case-flow .flow-steps strong { font-size: 15px }.case-flow .flow-steps p { font-size: 11px }
+  .case-flow .flow-database { font-size: 12px }.resume-entry-heading { display: block }.resume-entry-heading > span { display: block; margin-bottom: 5px }
+}
+@media(prefers-reduced-motion:reduce) {
+  .quickcart-visual:hover .screen-first { transform: translateY(25px) rotate(-4deg) }.quickcart-visual:hover .screen-second { transform: rotate(4deg) }
+}
+@media print {
+  .resume-section p, .resume-section li { font-size: 9pt; line-height: 1.32 }.resume-section { margin-top: 12px; padding-top: 10px }
+  .resume-section > h2 { margin-bottom: 8px; font-size: 9pt }.resume-section h3 { font-size: 11pt; margin-bottom: 3px }
+  .resume-entry + .resume-entry { margin-top: 10px }.resume-section ul { margin-block: 3px }
+  .resume-top { margin-bottom: 12px }.resume-title p { margin-top: 4px; font-size: 9pt }.resume-subline { font-size: 9pt; margin-bottom: 3px }
+  .resume-entry-heading > span { font-size: 9pt }.resume-section li + li { margin-top: 2px }
+}
+
+/* A scroll-controlled pen drawing that hands the same paper to the visitor. */
+.more-studies { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 24px; margin-top: 40px; border-top: 1px solid var(--line); color: var(--gray); font-size: 14px }
+.more-studies > span { color: var(--ink) }
+.sketch-section { min-height: calc(100svh + 300px); align-items: start; position: relative; grid-template-columns: minmax(0,.78fr) minmax(0,1.3fr) }
+.sketch-intro, .sketchbook { position: sticky; top: 90px }
+.sketchbook { min-width: 0 }
+.sketch-toolbar { min-height: 64px }
+.sketch-scroll-label { font-size: 12px; letter-spacing: .1em; color: #63685f }
+.sketch-sheet-label { font-size: 12px }
+.sketch-watch { color: var(--gray); font-size: 12px; padding-inline: 7px; min-height: 40px }
+.scroll-drawing { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; transition: opacity 260ms ease; opacity: 1 }
+.scroll-drawing.drawing-guide { opacity: .13 }
+.drawing-guide .drawing-pencil { display: none }
+.sketch-takeover { position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: transparent; border: 0; z-index: 1 }
+.sketch-takeover > span { display: flex; gap: 9px; align-items: center; padding: 12px 17px; border-radius: 4px; background: #fffdf7; border: 1px solid #dedace; box-shadow: 0 4px 20px #35342d0a; color: var(--orange); font-size: 14px; opacity: 0; transform: translateY(5px); transition: opacity 200ms, transform 200ms }
+.sketch-takeover:focus-visible { outline-offset: -5px }
+.sketch-paper:has(.sketch-takeover:focus-visible) .scroll-drawing { opacity: .24 }
+.sketch-takeover:focus-visible > span { opacity: 1; transform: none }
+.sketch-idle-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 7px 20px; border-top: 1px solid #e7e4db; min-height: 56px; color: #6b7066; font-size: 12px }
+.sketch-idle-bottom button { display: inline-flex; gap: 7px; align-items: center; border: 0; background: transparent; padding: 10px 0; min-height: 40px; color: var(--orange); font-size: 14px; white-space: nowrap }
+.sketch-instructions { font-size: 12px }
+.sketch-bottom button, .sketch-modes button { font-size: 14px }
+@media(hover:hover) and (pointer:fine) {
+  .sketch-paper:has(.sketch-takeover:hover) .scroll-drawing { opacity: .24 }
+  .sketch-takeover:hover > span { opacity: 1; transform: none }
+}
+@media(max-width:760px) {
+  .sketch-section { display: block; min-height: calc(100svh + 620px); padding-bottom: 95px }
+  .sketch-intro { position: static; margin-bottom: 30px }
+  .sketchbook { top: 28px }
+  .sketch-sheet-label { display: inline; font-size: 12px; letter-spacing: .03em }
+  .sketch-aside { transform: none }
+  .sketch-idle-bottom { padding-inline: 12px; gap: 8px }
+  .sketch-idle-bottom > span { max-width: 160px; line-height: 1.5 }
+  .sketch-watch { font-size: 12px }
+  .sketch-modes button { min-width: 70px; padding-inline: 7px }
+  .sketch-bottom button { font-size: 13px }
+  .more-studies { display: block; line-height: 1.8 }.more-studies > span { display: block }
+}
+@media(prefers-reduced-motion:reduce) {
+  .scroll-drawing, .sketch-takeover > span { transition: none }
+  .scroll-drawing [data-pen-stroke] { stroke-dashoffset: 0!important; opacity: 1!important }
+  .drawing-pencil { display: none }
+  .sketch-section { min-height: 0; padding-bottom: 100px }
+  .sketch-intro, .sketchbook { position: relative; top: auto }
+}
+
+/* The artwork carries the personality; supporting content stays direct. */
+.hero { grid-template-columns: 1.35fr 1fr; padding-block: 44px 48px }
+.hero h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(78px,8.5vw,114px); font-weight: 400; letter-spacing: -.06em; line-height: .96; margin-top: 0 }
+.hero-role { color: var(--ink); margin-top: 25px; font-size: 18px }
+.hero-description { max-width: 440px; margin-top: 14px; font-size: 17px }
+.hero-note { font-size: 14px; margin-top: 27px }
+.hero-note p { font-size: 14px; max-width: 340px; line-height: 1.6 }
+.hero-note strong { font-weight: 500; color: var(--ink) }
+.hero-actions .text-link { border-color: var(--gray) }
+.hero-art.interactive-art { max-width: 330px }
+.interactive-art figcaption { font-size: 14px; letter-spacing: 0 }
+.lens-toolbar > span { font-size: 12px; letter-spacing: 0 }
+.identity-strip { border-bottom: 0; font-size: 14px; color: var(--gray) }
+.section-heading { margin-bottom: 16px }
+.section-heading h2, .experience-intro h2, .about-section h2 { font-size: 34px; letter-spacing: -.04em }
+.selected-projects { display: block }
+.selected-projects > article { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); align-items: center; gap: 80px; padding-block: 38px }
+.selected-projects > article + article { border-top: 1px solid var(--line) }
+.selected-project-copy { grid-column: 1; grid-row: 1; padding: 0 }
+.project-visual-link, .quickcart-visual { grid-column: 2; grid-row: 1; height: 300px }
+.selected-project-copy h3 { font-size: 38px; margin-block: 8px 18px }
+.selected-project-copy > .project-kind { font-size: 14px; color: var(--gray); margin: 0 }
+.selected-project-copy > p:not(.project-kind) { font-size: 17px; max-width: 420px }
+.project-links { gap: 24px; margin-top: 22px }
+.project-flow { padding: 28px 30px; background: #eef0ef; border: 0; justify-content: center }
+.flow-heading { font: 14px/1.5 Arial,Helvetica,sans-serif; letter-spacing: 0; color: #626b67 }
+.flow-heading > span:first-child { font-weight: 600 }
+.flow-steps { gap: 22px; margin: 36px 0 24px }
+.flow-steps::before { display: none }
+.flow-steps li { min-width: 0; min-height: 0; border: 0; border-top: 1px solid #b8c3bd; padding: 15px 0 0; background: transparent }
+.flow-steps li:not(:last-child)::after { content: '→'; position: absolute; top: 14px; right: -17px; font-size: 16px; color: #6d7b73 }
+.flow-steps strong { font-size: 18px; letter-spacing: -.025em }
+.flow-steps p { font-size: 13px; margin-top: 5px }
+.flow-database { gap: 14px; font-size: 13px; border-color: #ced6d1; padding-top: 15px }
+.flow-caption { display: block; margin: 0; padding-top: 8px; font: 13px/1.5 Arial,Helvetica,sans-serif; letter-spacing: 0; color: #626b67 }
+.quickcart-visual { padding-top: 27px; background: #efede9; border: 0; gap: 35px }
+.quickcart-visual .prototype-screen { max-width: 155px; flex-basis: 38% }
+.prototype-visual-label { font-size: 13px; letter-spacing: 0; background: #efede9f5 }
+.more-studies { border: 0; padding: 0; margin-top: 9px; color: var(--gray); font-size: 14px }
+.experience-section { grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 80px; padding-top: 40px }
+.experience-intro .text-link { margin-top: 22px }
+.experience-item h3 { margin: 0; font-size: 27px }
+.experience-item > p.experience-role { margin-top: 6px; font-size: 14px; color: var(--gray) }
+.experience-item > p:not(.experience-role) { max-width: 640px; font-size: 16px; line-height: 1.75 }
+.experience-item > p.experience-detail { font-size: 14px }
+.experience-item + .experience-item { padding-block: 28px 0 }
+.sketch-intro h2 { font-size: 42px; letter-spacing: -.045em }
+.sketch-intro > p { max-width: 290px }
+.sketch-aside { font-family: inherit; font-size: 14px; font-style: normal; transform: none; color: var(--gray); line-height: 1.7 }
+.sketch-scroll-label, .sketch-sheet-label { font-family: inherit; font-size: 14px; letter-spacing: 0 }
+.sketch-idle-bottom { font-size: 13px }
+.about-section { grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 80px; padding-block: 56px 70px }
+.about-copy > p { color: var(--gray); font-size: 17px; line-height: 1.8; max-width: 610px }
+.education-line > span:first-child { font-size: 14px; letter-spacing: 0 }
+.footer { background: transparent; color: var(--ink); padding-top: 0 }
+.footer-main { border-top: 1px solid var(--line); grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 80px; padding-block: 42px 28px; align-items: start }
+.footer h2 { font-size: 30px; letter-spacing: -.04em }
+.contact-note { margin-top: 15px; color: var(--gray); font-size: 15px; line-height: 1.8 }
+.email-link { margin-top: 0; font-size: clamp(18px,2.2vw,28px); color: var(--ink) }
+.email-link:hover, .contact-actions > *:hover { color: var(--orange) }
+.contact-actions { color: var(--gray); font-size: 14px }
+.copy-status { color: var(--orange) }
+.footer-bottom { justify-content: flex-start; gap: 20px; border-color: var(--line); font-size: 13px; color: var(--gray) }
+.footer-bottom .monogram { color: var(--ink); font-size: 26px }
+.footer-bottom > a:last-child { margin-left: auto }
+.case-type { font-size: 14px; color: var(--gray) }
+.page-hero h1 { letter-spacing: -.055em }
+.project-facts dt { font-size: 14px; letter-spacing: 0 }
+.case-row h2 { font-size: 28px; letter-spacing: -.035em }
+.case-row { grid-template-columns: minmax(0,1fr) minmax(0,1.8fr); gap: 65px; padding-block: 46px }
+.case-row h3 { font-size: 20px }
+.insights li { border: 0; padding-left: 0 }
+.case-flow .project-flow { min-height: 285px }
+.case-flow .flow-steps li { min-height: 0; padding: 18px 0 0 }
+.case-flow .flow-steps li::after { top: 16px }
+.case-flow .flow-steps strong { font-size: 22px }
+.sketch-skip { display: inline-block; margin-top: 16px; font-size: 14px; color: var(--gray); text-decoration: underline; text-underline-offset: 4px }
+.sketch-skip:hover { color: var(--orange) }
+.sketch-bottom button, .sketch-modes button, .sketch-watch, .sketch-idle-bottom button { min-height: 44px }
+.sketch-instructions { font-size: 13px; line-height: 1.7 }
+@media(max-width:1000px) and (min-width:761px) {
+  .selected-projects > article, .experience-section, .about-section, .footer-main { gap: 38px }
+  .project-flow { padding: 23px }.flow-steps strong { font-size: 16px }.flow-steps p { font-size: 12px }
+}
+@media(max-width:760px) {
+  .hero { grid-template-columns: 1fr; padding-block: 37px 36px; gap: 34px }
+  .hero h1 { font-size: clamp(72px,21vw,90px) }.hero-role { font-size: 17px; margin-top: 22px }
+  .hero-description { font-size: 17px }.hero-note p { font-size: 14px }.hero-note { margin-top: 22px }
+  .hero-art.interactive-art { max-width: 300px }.lens-toolbar > span { font-size: 12px }.interactive-art figcaption { font-size: 13px }
+  .identity-strip { font-size: 13px; gap: 7px }.strip-cross { margin-inline: 8px }
+  .section-heading h2, .experience-intro h2, .about-section h2 { font-size: 30px }
+  .selected-projects > article { display: flex; flex-direction: column; align-items: stretch; gap: 26px; padding-block: 28px 35px }
+  .selected-project-copy { order: 0 }.project-visual-link, .quickcart-visual { order: 1; height: 270px }
+  .selected-project-copy h3 { font-size: 33px; margin-block: 6px 14px }.selected-project-copy > p:not(.project-kind) { font-size: 16px }
+  .project-links { margin-top: 18px }.project-links .text-link { font-size: 14px }
+  .project-flow { padding: 24px 18px }.flow-heading { font-size: 13px }.flow-steps { gap: 22px; margin: 30px 0 22px }
+  .flow-steps strong { font-size: 16px }.flow-steps p { font-size: 12px; line-height: 1.5 }.flow-steps li { padding: 13px 0 0 }
+  .flow-database { font-size: 12px; gap: 8px }.flow-caption { font-size: 12px }.flow-database > span:last-child { max-width: 190px }
+  .quickcart-visual { gap: 28px }.prototype-visual-label { font-size: 12px }
+  .more-studies { margin-top: 0 }
+  .experience-section, .about-section, .footer-main { grid-template-columns: 1fr; gap: 28px }
+  .experience-section { padding-top: 24px }.experience-intro .text-link { margin-top: 14px }
+  .sketch-intro h2 { font-size: 36px }.sketch-scroll-label, .sketch-sheet-label { font-size: 13px }
+  .sketch-aside { font-size: 14px }.sketch-intro > p { max-width: none }
+  .about-section { padding-block: 42px 48px }.about-section h2 br { display: none }.about-copy > p { font-size: 16px }
+  .footer-main { padding-block: 32px 18px; gap: 24px }.footer h2 { font-size: 27px }.contact-note { margin-top: 12px }
+  .email-link { font-size: 21px }.contact-actions { font-size: 14px; gap: 24px }.footer-bottom { font-size: 12px }
+  .case-row { grid-template-columns: 1fr; gap: 21px; padding-block: 34px }.case-row h2 { font-size: 26px }
+  .case-flow .project-flow { padding: 22px 18px; min-height: 270px }.case-flow .flow-steps strong { font-size: 16px }
+  .case-flow .flow-steps p { font-size: 12px }.case-flow .flow-steps li { padding: 13px 0 0 }
+}
+
+/* Use the supplied phone frames without changing the original screen designs. */
+.quickcart-visual { align-items: center; padding: 12px 25px 37px; background: #f1f5f8 }
+.quickcart-visual .prototype-screen { flex-basis: 30%; max-width: 110px; filter: drop-shadow(0 5px 5px #24435b20) }
+.quickcart-visual .screen-first { transform: translateY(5px) rotate(-4deg) }
+.quickcart-visual .screen-second { transform: rotate(4deg) }
+.quickcart-visual:hover .screen-first { transform: rotate(-2deg) }
+.quickcart-visual:hover .screen-second { transform: translateY(-3px) rotate(2deg) }
+.prototype-visual-label { background: #f1f5f8f5; color: #637581 }
+.case-comparison figcaption { text-align: center; margin-top: 14px }
+@media(max-width:760px) { .quickcart-visual { padding: 10px 22px 36px }.quickcart-visual .prototype-screen { max-width: 100px } }
+@media(prefers-reduced-motion:reduce) { .quickcart-visual .prototype-screen { transform: none!important; transition: none } }
+
+/* The supplied mark keeps its original silhouette; color is applied at display time. */
+.brand-mark { display: block; width: 56px; height: 34px; overflow: hidden; transform-origin: 50% 60% }
+.brand-original { filter: brightness(0) }
+.wordmark, .brand-home { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: flex-start }
+.wordmark:focus-visible .brand-mark, .brand-home:focus-visible .brand-mark { animation: brand-settle 440ms ease-out }
+.site-header nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 1px; text-decoration-color: currentColor }
+.footer-bottom .brand-mark { width: 42px; height: 26px }
+@keyframes brand-settle { 0%,100% { transform: none } 40% { transform: translateY(-2px) rotate(-3deg) } 72% { transform: translateY(0) rotate(1deg) } }
+@media (hover:hover) { .wordmark:hover .brand-mark, .brand-home:hover .brand-mark { animation: brand-settle 440ms ease-out } }
+@media (max-width:760px) { .brand-mark { width: 51px; height: 31px } }
+@media (prefers-reduced-motion:reduce) { .brand-mark { animation: none!important; transform: none!important } }

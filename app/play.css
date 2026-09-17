@@ -1,0 +1,103 @@
+/* Small, deliberate movement. Navigation keeps its native behavior. */
+@keyframes page-arrive { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes page-leave { to { opacity: 0; transform: translateY(-8px) } }
+@keyframes ink-arrive { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+::view-transition-old(root) { animation: page-leave 160ms ease both }
+::view-transition-new(root) { animation: page-arrive 280ms cubic-bezier(.2,.7,.2,1) both }
+.site-header { view-transition-name: site-header }
+::view-transition-group(site-header) { animation-duration: 280ms }
+.site-header nav { margin-right: 25px; gap: 26px }
+.site-header nav a { position: relative }
+.site-header nav a::after { content: ''; position: absolute; height: 1px; bottom: -6px; left: 0; right: 0; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 180ms ease }
+.site-header nav a:hover::after, .site-header nav a:focus-visible::after { transform: scaleX(1) }
+.play-nav { display: inline-flex; gap: 4px; align-items: center; color: var(--orange) }
+.play-nav span { font-size: 13px }
+.text-link svg, .button svg, .case-link svg, .round-arrow svg, .email-link svg { transition: transform 200ms ease }
+.text-link:hover svg, .email-link:hover svg { transform: translate(2px,-2px) }
+.button:hover svg { transform: translateY(2px) }
+.project-card:hover .case-link svg { transform: translateX(4px) }
+.project-card:hover .round-arrow svg { transform: rotate(45deg) }
+.gallery-frame { transition: transform 280ms ease, box-shadow 280ms ease }
+.gallery-button:hover .gallery-frame { transform: translateY(-4px) rotate(-.5deg); box-shadow: 0 12px 28px -18px #1e242a55 }
+.art-preview:nth-child(2):hover img { transform: scale(1.025) rotate(.4deg) }
+
+/* The magnifier uses each original artwork at full resolution. */
+.interactive-art { max-width: 390px }
+.interactive-art .art-mat { padding: 12px 12px 0; transition: transform 350ms cubic-bezier(.2,.7,.2,1), box-shadow 350ms ease }
+.interactive-art .art-mat:focus-within, .interactive-art .art-mat:hover { transform: rotate(0); box-shadow: 0 20px 38px -22px #18222b60 }
+.interactive-art figcaption a { display: inline-flex; align-items: center; gap: 5px; color: var(--ink); text-transform: none; letter-spacing: 0 }
+.interactive-art figcaption a:hover { color: var(--orange) }
+.lens-surface { position: relative; isolation: isolate; cursor: zoom-in; overflow: hidden }
+.lens-surface img { user-select: none; -webkit-user-drag: none }
+.graphite-lens { position: absolute; width: 148px; height: 148px; transform: translate(-50%,-50%) scale(.8); border-radius: 50%; border: 3px solid #fff; outline: 1px solid #292d3340; background-color: white; background-repeat: no-repeat; box-shadow: 0 8px 24px #1115; pointer-events: none; opacity: 0; transition: opacity 160ms ease, transform 160ms ease; z-index: 2 }
+.is-inspecting .graphite-lens { opacity: 1; transform: translate(-50%,-50%) scale(1) }
+.graphite-lens span { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); color: white; background: var(--ink); border-radius: 20px; padding: 1px 8px; font: 10px/1.6 Arial,sans-serif; letter-spacing: .08em }
+.lens-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 5px 0 }
+.lens-toolbar .lens-toggle { background: transparent; color: var(--orange); border: 0; border-radius: 0; font-size: 12px; padding: 0 2px; min-height: 40px; gap: 5px }
+.lens-toggle:hover { color: var(--ink) }
+.lens-toolbar > span { font-size: 9px; letter-spacing: .07em; color: var(--gray) }
+.art-dialog .art-lens { width: fit-content; max-width: 100%; margin-inline: auto }
+.art-dialog .lens-surface img { max-height: 65dvh; width: auto; max-width: 100%; object-fit: contain; margin: 0 }
+.art-dialog .lens-toolbar { padding-top: 8px }
+
+/* A little shared sketchbook, with an analog / digital switch. */
+.sketch-section { display: grid; grid-template-columns: .78fr 1.3fr; gap: 80px; align-items: center; padding-block: 96px; border-bottom: 1px solid var(--line); scroll-margin-top: 20px }
+.sketch-intro .eyebrow { color: var(--orange); margin-bottom: 18px }
+.sketch-intro h2 { font-size: clamp(39px,4.1vw,58px) }
+.sketch-intro > p:not(.eyebrow) { color: var(--gray); font-size: 16px; max-width: 290px; margin-top: 24px; line-height: 1.8 }
+.sketch-aside { margin-top: 30px; display: flex; align-items: center; gap: 16px; color: var(--orange); font-family: Georgia,serif; font-style: italic; font-size: 16px; transform: rotate(-3deg); transform-origin: left }
+.sketchbook { position: relative; background: #fffdf7; border: 1px solid #dfded4; box-shadow: 5px 5px 0 -1px #f7f5ed, 5px 5px 0 0 #dfded4, 0 18px 40px -30px #2424244d; transform: rotate(.6deg); transition: transform 250ms ease }
+.sketchbook:focus-within, .sketchbook:hover { transform: rotate(0) }
+.sketch-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 15px; min-height: 65px; padding: 13px 20px; border-bottom: 1px solid #e7e4db }
+.sketch-modes { background: #efede5; padding: 3px; border-radius: 5px }
+.sketch-modes button { min-height: 34px; height: 34px; min-width: 80px; gap: 7px; font-size: 12px; color: #666961; border-radius: 3px!important; border: 0; transition: background 150ms,color 150ms,box-shadow 150ms }
+.sketch-modes button[data-state=on] { background: #fffdf7; color: var(--ink); box-shadow: 0 1px 4px #00000012 }
+.sketch-modes button[value=pixels][data-state=on] { color: var(--orange) }
+.sketch-sheet-label { font: 9px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing: .1em; color: #7d8075 }
+.sketch-paper { position: relative; aspect-ratio: 12/7; background-image: radial-gradient(#bcbcaf66 .8px, transparent .8px); background-size: 20px 20px; transition: background-color 200ms; overflow: hidden }
+.sketch-paper.pixel-paper { background-color: #faf1e5; background-image: linear-gradient(#bd3d1b0a 1px,transparent 1px),linear-gradient(90deg,#bd3d1b0a 1px,transparent 1px); background-size: calc(100% / 72) calc(100% / 42) }
+.sketch-paper canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: crosshair; z-index: 1 }
+.sketch-paper canvas:focus-visible { outline-offset: -5px; outline-width: 2px }
+.sketch-empty { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none; text-align: center; padding: 22px }
+.sketch-empty > span { font-family: Georgia,serif; font-style: italic; font-size: clamp(22px,2.4vw,32px); letter-spacing: -.035em; color: #78796e; transform: rotate(-4deg) }
+.sketch-empty p { font-size: 11px; color: #898c81; margin-top: 12px }
+.sketch-pen { position: absolute; z-index: 2; width: 14px; height: 14px; border: 1px solid var(--orange); border-radius: 50%; transform: translate(-50%,-50%); pointer-events: none }
+.sketch-pen.is-down { background: #bd3d1b55 }
+.paper-corner { position: absolute; bottom: 0; right: 0; height: 20px; width: 20px; background: linear-gradient(135deg,#ece7d900 50%,#e4dfd0 51%,#fffdf7 75%); pointer-events: none }
+.sketch-bottom { display: flex; justify-content: space-between; align-items: center; padding: 7px 14px; border-top: 1px solid #e7e4db; gap: 6px }
+.sketch-tools { display: flex; gap: 3px }
+.sketch-bottom button { font-size: 12px; min-height: 40px; height: auto; padding: 8px 9px; color: #60655e; gap: 6px }
+.sketch-bottom button:hover { background: #eeeae0; color: var(--ink) }
+.sketch-bottom button:disabled { opacity: .38 }
+.sketch-instructions { color: var(--gray); font-size: 11px; line-height: 1.8; margin-top: 19px; position: absolute; inset: 100% 0 auto; text-align: center }
+.sketch-instructions span { display: block }
+@media(min-width:761px) { .hero { padding-top: 59px; padding-bottom: 60px } }
+@media(max-width:1100px) { .site-header nav { gap: 18px; margin-right: 5px }.sketch-section { gap: 36px }.sketch-sheet-label { display: none } }
+@media(max-width:760px) {
+  .site-header nav { gap: 19px; margin-right: 0 }
+  .hero-art.interactive-art { max-width: 335px }
+  .hero h1 em::after { bottom: -6px; height: 3px }
+  .lens-toolbar > span { font-size: 8px }
+  .interactive-art figcaption { font-size: 11px }
+  .sketch-section { grid-template-columns: 1fr; padding-top: 54px; padding-bottom: 108px; gap: 26px }
+  .sketch-intro h2 { font-size: 40px }
+  .sketch-intro > p:not(.eyebrow) { max-width: 330px; margin-top: 18px }
+  .sketch-aside { margin-top: 17px; font-size: 15px; gap: 10px }
+  .sketch-aside svg { width: 20px }
+  .sketch-toolbar { padding: 9px 12px; min-height: 59px }
+  .sketch-modes button { min-height: 40px; height: 40px }
+  .sketch-sheet-label { display: block; font-size: 8px }
+  .sketch-paper { aspect-ratio: 12/7 }
+  .sketch-empty > span { font-size: 23px }
+  .sketch-empty p { font-size: 10px; max-width: 230px }
+  .sketch-bottom { padding: 5px 6px }
+  .sketch-bottom button { font-size: 11px; gap: 4px; padding-inline: 6px }
+  .sketch-instructions { font-size: 10px; margin-top: 15px }
+}
+@media(prefers-reduced-motion:reduce) {
+  ::view-transition-old(*), ::view-transition-new(*), ::view-transition-group(*) { animation: none!important }
+  .reveal-ready { opacity: 1!important; transform: none!important }
+  .hero-copy > *, .hero h1 em::after { animation: none!important }
+  .sketchbook, .interactive-art .art-mat, .gallery-button:hover .gallery-frame { transform: none!important }
+}
+@media print { .sketch-section { display: none }.reveal-ready { opacity: 1; transform: none } }
