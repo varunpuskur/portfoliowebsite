@@ -5,17 +5,25 @@ import { Pencil } from 'lucide-react';
 
 // Ordered pen strokes, replayed by distance. The cursor and ink share the
 // same path geometry, so every mark is made at the pencil tip.
+// Keep each entry continuous: SVG dash patterns restart at every move command.
 const LINES = [
-  'M94 284 C126 273 153 269 177 270 M264 273 L453 273 M540 270 Q580 265 601 247 L604 223 Q598 204 563 198 L477 188 Q444 143 397 132 Q342 123 292 136 Q257 145 222 176 L166 190 Q120 199 107 222 L98 244 L94 284',
+  'M94 284 C126 273 153 269 177 270',
+  'M264 273 L453 273',
+  'M540 270 Q580 265 601 247 L604 223 Q598 204 563 198 L477 188 Q444 143 397 132 Q342 123 292 136 Q257 145 222 176 L166 190 Q120 199 107 222 L98 244 L94 284',
   'M264 274 A43 43 0 1 1 178 274 A43 43 0 1 1 264 274',
   'M242 274 A21 21 0 1 1 200 274 A21 21 0 1 1 242 274',
   'M540 274 A43 43 0 1 1 454 274 A43 43 0 1 1 540 274',
   'M518 274 A21 21 0 1 1 476 274 A21 21 0 1 1 518 274',
   'M246 176 Q273 147 305 143 Q353 132 389 143 Q421 153 452 184 L246 176',
   'M327 140 L312 178 L299 251 Q362 259 436 254 L448 192',
-  'M337 198 L357 199 M122 223 L160 215 Q169 213 174 202 M557 205 L583 212 M108 245 L165 239 M552 243 L594 231',
+  'M337 198 L357 199',
+  'M122 223 L160 215 Q169 213 174 202',
+  'M557 205 L583 212',
+  'M108 245 L165 239',
+  'M552 243 L594 231',
   'M140 331 Q322 320 572 332',
-  'M81 164 L161 105 L189 129 L249 74 L278 102 M453 111 L506 68 L568 135 L597 112 L642 159',
+  'M81 164 L161 105 L189 129 L249 74 L278 102',
+  'M453 111 L506 68 L568 135 L597 112 L642 159',
   'M353 67 A23 23 0 1 1 399 67 A23 23 0 1 1 353 67',
 ];
 
@@ -83,7 +91,7 @@ export function ScrollDrawing({ opened, sectionRef }: { opened: boolean; section
 
   return <svg ref={svg} className={'scroll-drawing' + (opened ? ' drawing-guide' : '')} viewBox="0 0 720 420" aria-hidden="true">
     <g fill="none" stroke="#424847" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      {LINES.map(d => <path key={d} d={d} data-pen-stroke pathLength={1} strokeDasharray="1 1" strokeDashoffset={1} />)}
+      {LINES.map(d => <path key={d} d={d} data-pen-stroke pathLength={1} strokeDasharray="1 1" strokeDashoffset={1} style={{ opacity: 0 }} />)}
     </g>
     <g ref={pencil} className="drawing-pencil" style={{ opacity: 0 }}><Pencil x={-3} y={-25} width={28} height={28} color="#bd3d1b" strokeWidth={1.8} fill="#fffdf7" /></g>
   </svg>;

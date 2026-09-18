@@ -92,13 +92,20 @@ export function SketchPad() {
   const download = () => {
     if (!canvas.current) return;
     const exportCanvas = document.createElement('canvas');
-    exportCanvas.width = WIDTH; exportCanvas.height = HEIGHT;
+    const creditHeight = 32;
+    exportCanvas.width = WIDTH; exportCanvas.height = HEIGHT + creditHeight;
     const ctx = exportCanvas.getContext('2d');
     if (!ctx) return;
-    ctx.fillStyle = '#fffdf7'; ctx.fillRect(0, 0, WIDTH, HEIGHT);
+    ctx.fillStyle = '#fffdf7'; ctx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
     ctx.drawImage(canvas.current, 0, 0);
+    ctx.fillStyle = '#626971';
+    ctx.font = '12px Arial, Helvetica, sans-serif';
+    ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+    ctx.fillText('Made on varunpuskur.com', WIDTH - 16, HEIGHT + creditHeight / 2);
+    const today = new Date();
+    const date = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, '0'), String(today.getDate()).padStart(2, '0')].join('-');
     const link = document.createElement('a');
-    link.download = `a-little-${mode === 'paper' ? 'sketch' : 'pixel-art'}.png`;
+    link.download = `varunpuskur-${mode === 'paper' ? 'sketch' : 'pixel-art'}-${date}.png`;
     link.href = exportCanvas.toDataURL('image/png'); link.click();
   };
 
