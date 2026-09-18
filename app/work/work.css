@@ -1,6 +1,6 @@
 .work-index { --ink: #203442; --gray: #63737e; --orange: #235f86; --line: #d2dfe7; padding-top: 42px; padding-bottom: 64px }
 .work-intro { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 42px }
-.work-intro h1 { font: 400 clamp(66px,7.5vw,96px)/1 Georgia,serif; letter-spacing: -.06em }
+.work-intro h1 { font: 400 clamp(66px,7.5vw,96px)/1 Georgia,serif; letter-spacing: normal }
 .work-intro > p { font-size: 17px; color: var(--gray); line-height: 1.7; padding-bottom: 5px }
 .project-index-tabs { gap: 0; isolation: isolate; filter: drop-shadow(0 18px 22px #214c6a12) }
 .project-folders { position: relative; z-index: 2; justify-content: flex-start; padding: 0; height: auto!important; border-radius: 0; background: transparent; gap: 6px; width: 100%; margin-bottom: -1px }
@@ -17,7 +17,7 @@
 .project-folder-content[data-state=inactive] { display: none }
 .project-overview { display: flex; flex-direction: column; align-items: flex-start; padding: 46px 44px }
 .project-stack { font-size: 14px; color: var(--gray) }
-.project-overview h2 { font-size: clamp(32px,3.5vw,43px); letter-spacing: -.05em; line-height: 1.1; margin: 18px 0 22px }
+.project-overview h2 { font-size: clamp(32px,3.5vw,43px); letter-spacing: normal; line-height: 1.1; margin: 18px 0 22px }
 .project-overview > p:not(.project-stack) { font-size: 17px; line-height: 1.7; max-width: 340px }
 .project-overview > p.project-scope-note { font-size: 15px; color: var(--gray); margin-top: 15px; margin-bottom: 26px }
 .project-overview .button { margin-top: auto; background: #203f55 }.project-overview .button:hover { background: #285f82 }
@@ -36,7 +36,7 @@
 .file-step-content { min-height: 196px; padding: 6px 6px 18px; animation: folder-in 160ms ease-out }
 .file-step-content[data-state=inactive] { display: none }
 .file-step-content code { font: 13px/1.5 ui-monospace,monospace; color: #597383 }
-.file-step-content h3 { font-size: 35px; font-weight: 400; letter-spacing: -.04em; margin-block: 12px }
+.file-step-content h3 { font-size: 35px; font-weight: 400; letter-spacing: normal; margin-block: 12px }
 .file-step-content p { font-size: 16px; line-height: 1.7; color: #405866; max-width: 375px }
 .file-footnote { font-size: 13px; color: #627581; border-top: 1px solid #d2dfe7; padding: 17px 6px 0; line-height: 1.7; margin-top: auto; min-height: 64px }
 .design-comparison { padding: 28px 28px 22px; background: #f1f5f8; min-width: 0 }
