@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Work() {
   return <><Header /><main id="main" className="wrap work-index">
-    <div className="work-intro"><h1>Work</h1><p>A file-processing app and a grocery-shopping concept.<br />A closer look at how each came together.</p></div>
+    <div className="work-intro"><h1>Work</h1><p>A file-processing app and a grocery-shopping concept.<br />{' '}A closer look at how each came together.</p></div>
     <WorkIndex />
     <p className="work-next">More projects coming soon.</p>
   </main><Footer /></>;

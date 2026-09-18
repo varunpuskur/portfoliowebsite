@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </section>
       <SketchPad />
-      <section id="about" className="section about-section wrap"><div><h2>A bit more<br />about me</h2></div><div className="about-copy"><p>I’m interested in backend software and AI. This semester, I’m working with C and RISC-V in Computer Organization II at Virginia Tech.</p><div className="education-line"><span>Virginia Tech</span><strong>B.S. Computer Science</strong><span>Expected May 2028</span></div></div></section>
+      <section id="about" className="section about-section wrap"><div><h2>A bit more<br />{' '}about me</h2></div><div className="about-copy"><p>I’m interested in backend software and AI. This semester, I’m working with C and RISC-V in Computer Organization II at Virginia Tech.</p><div className="education-line"><span>Virginia Tech</span><strong>B.S. Computer Science</strong><span>Expected May 2028</span></div></div></section>
     </main>
     <Footer />
   </>;
