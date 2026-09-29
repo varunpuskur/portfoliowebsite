@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  {% for sheet in ['base', 'global', 'play', 'refinements', 'controls'] %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/' ~ sheet ~ '.css') }}">
+  {% endfor %}
+  {% if page_name in ['work', 'encryptron', 'art'] %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/' ~ page_name ~ '.css') }}">
+  {% endif %}
+  <script src="{{ url_for('static', filename='js/site.js') }}" defer></script>
+  {% if page_name == 'work' %}<script src="{{ url_for('static', filename='js/work.js') }}" defer></script>{% endif %}
+  {% if page_name in ['art', 'index'] %}<script src="{{ url_for('static', filename='js/gallery.js') }}" defer></script>{% endif %}
+  {% if page_name == 'index' %}<script type="module" src="{{ url_for('static', filename='js/sketchpad.js') }}"></script>{% endif %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include 'partials/header.html' %}
+  {% block content %}{% endblock %}
+  {% include 'partials/footer.html' %}
+</body>
+</html>

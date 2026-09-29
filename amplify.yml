@@ -3,19 +3,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 22
-        - nvm use 22
-        - npm install --global pnpm@11.25.0
-        - pnpm install --frozen-lockfile
+        - python3 -m venv /tmp/portfolio-build-venv
+        - /tmp/portfolio-build-venv/bin/python -m pip install -r requirements.txt
     build:
       commands:
-        - STATIC_EXPORT=true pnpm run build
+        - /tmp/portfolio-build-venv/bin/python -m unittest discover -s tests -v
+        - /tmp/portfolio-build-venv/bin/python build_static.py
         - test -f out/index.html
   artifacts:
     baseDirectory: out
     files:
       - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
-      - .next/cache/**/*

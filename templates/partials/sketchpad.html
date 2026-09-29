@@ -1,0 +1,17 @@
+<div id="play" class="sketchbook sketchbook-closed">
+  <div class="sketch-toolbar">
+    <span class="sketch-scroll-label" data-idle>Sketchpad</span><span class="sketch-sheet-label" data-idle>Scroll to draw</span>
+    <div class="sketch-modes" role="group" aria-label="Drawing style" data-edit hidden><button type="button" data-mode="paper" data-state="on" aria-pressed="true">✎ Paper</button><button type="button" data-mode="pixels" data-state="off" aria-pressed="false">▦ Pixels</button></div>
+    <button type="button" class="sketch-watch" data-done data-edit hidden>Done drawing</button>
+  </div>
+  <div class="sketch-paper is-watching">
+    {% include 'partials/scroll-drawing.html' %}
+    <button class="sketch-takeover" type="button" data-take-pencil data-idle aria-label="Take the pencil and draw"><span>Take the pencil ↗</span></button>
+    <canvas width="720" height="420" tabindex="0" role="application" aria-label="Interactive sketch pad" aria-describedby="sketch-instructions" data-edit hidden></canvas>
+    <span class="sketch-pen" aria-hidden="true" hidden></span><span class="paper-corner" aria-hidden="true"></span>
+  </div>
+  <div class="sketch-idle-bottom" data-idle><span>Click or tap to draw</span><button type="button" data-take-pencil data-return-focus>✎ Your turn</button></div>
+  <div class="sketch-bottom" data-edit hidden><div class="sketch-tools"><button type="button" data-undo disabled>↶ Undo</button><button type="button" data-clear disabled>↺ Clear</button></div><button type="button" data-save disabled>↓ Save PNG</button></div>
+  <p id="sketch-instructions" class="sketch-instructions" data-edit hidden>Draw with your mouse or finger. Select Done drawing to return to scrolling. <span>Keyboard: arrows move · Enter lifts / lowers the pen.</span></p>
+  <span class="sr-only" role="status" id="sketch-status" data-edit hidden>Blank drawing pad.</span>
+</div>

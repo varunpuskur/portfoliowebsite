@@ -1,0 +1,17 @@
+<div class="file-steps" data-tabs="workflow">
+  <div class="file-step-buttons" role="tablist" aria-label="File workflow">
+    {% for id, name in [('file', 'Choose file'), ('passphrase', 'Passphrase'), ('download', 'Download')] %}
+    <button type="button" role="tab" id="step-tab-{{ id }}" aria-controls="step-{{ id }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ 0 if loop.first else -1 }}" data-step="{{ id }}" data-state="{{ 'active' if loop.first else 'inactive' }}">{{ name }}</button>
+    {% endfor %}
+  </div>
+  <div class="file-progress" aria-hidden="true"><span style="width:0%"></span><i style="left:0%"></i></div>
+  <div class="file-step-content" role="tabpanel" id="step-file" aria-labelledby="step-tab-file" tabindex="0" data-note="The original interface separates file selection, passphrase entry, and submission.">
+    <code>File selection</code><h3>Choose file</h3><p>Select a file to see its name, then continue. Reset clears the selection so you can choose another file.</p>
+  </div>
+  <div class="file-step-content" role="tabpanel" id="step-passphrase" aria-labelledby="step-tab-passphrase" tabindex="0" hidden data-note="The transformation works on 16-byte blocks. This is an educational experiment, not production cryptography.">
+    <code>SHA-256 → custom cipher</code><h3>Passphrase</h3><p>The passphrase is hashed with SHA-256 to derive key material for a custom ten-round, Feistel-style cipher.</p>
+  </div>
+  <div class="file-step-content" role="tabpanel" id="step-download" aria-labelledby="step-tab-download" tabindex="0" hidden data-note="Decryption checks the file record and user permissions. The cipher remains an educational experiment.">
+    <code>BytesIO → send_file</code><h3>Download</h3><p>Flask compresses and transforms the content in memory, records the file and its owner, then returns an .enc download.</p>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="drawing-gallery">
+  {% for art in artworks %}
+  <article id="{{ art.id }}" class="drawing-piece{{ ' drawing-featured' if loop.index0 < 2 else '' }}">
+    <button class="drawing-open" type="button" data-art-index="{{ loop.index0 }}" aria-label="View {{ art.name }}, {{ art.medium }} in full">
+      <div class="drawing-mat">
+        <img src="{{ url_for('static', filename='images/' ~ art.id ~ '.webp') }}" width="{{ art.width }}" height="{{ art.height }}" alt="{{ art.alt }}" loading="{{ 'eager' if loop.index0 < 2 else 'lazy' }}">
+        <span class="drawing-enlarge" aria-hidden="true">↗ <span>View drawing</span></span>
+      </div>
+      <div class="drawing-caption"><strong>{{ art.name }}</strong><span>{{ art.medium }}</span></div>
+    </button>
+  </article>
+
+  {% endfor %}
+</div>
+<dialog class="drawing-viewer" id="drawing-viewer" aria-labelledby="viewer-title" aria-describedby="viewer-medium">
+  <div class="drawing-viewer-header"><div><h2 id="viewer-title">Drawing</h2><p id="viewer-medium"></p></div><button class="drawing-close" type="button" aria-label="Close drawing viewer">×</button></div>
+  <div class="drawing-viewer-stage">
+    <div class="art-lens">
+      <div class="lens-surface" tabindex="0" role="group" data-art-magnifier aria-label="Artwork magnifier" aria-describedby="viewer-help">
+        <img id="viewer-image" src="{{ url_for('static', filename='images/lion.webp') }}" alt="" width="1000" height="1291" draggable="false">
+        <div class="graphite-lens" aria-hidden="true"><span>2.4×</span></div>
+      </div>
+      <div class="lens-toolbar"><button class="lens-toggle" type="button" aria-pressed="false">Look closer</button></div>
+      <p class="sr-only" id="viewer-help">Hover to magnify. On touch screens, select Look closer, then tap the artwork. With a keyboard, arrow keys move the magnifier. Escape closes this viewer.</p>
+    </div>
+  </div>
+  <div class="drawing-viewer-navigation"><button type="button" data-art-prev aria-label="Previous drawing">← <span>Previous</span></button><p role="status" aria-live="polite" aria-atomic="true" id="viewer-count"></p><button type="button" data-art-next aria-label="Next drawing"><span>Next</span> →</button></div>
+  <div class="drawing-thumbnails" role="group" aria-label="Choose a drawing">
+    {% for art in artworks %}<button type="button" class="drawing-thumbnail" data-thumb="{{ loop.index0 }}" aria-label="Show {{ art.name }}" aria-pressed="false"><img src="{{ url_for('static', filename='images/' ~ art.id ~ '.webp') }}" alt="" width="{{ art.width }}" height="{{ art.height }}" loading="lazy"></button>{% endfor %}
+  </div>
+</dialog>
+<script type="application/json" id="artwork-data">{{ artworks | tojson }}</script>
